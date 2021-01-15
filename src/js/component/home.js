@@ -5,16 +5,16 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 export const Home = () => {
-	const [thelist, setList] = useState([
+	const [theList, setList] = useState([
 		"do homework",
 		"take out garbage",
 		"go to the mall"
 	]);
-	const [userInput, setUserInput] = useState([""]);
+	const [userInput, setUserInput] = useState("");
 
 	const handleKeyUp = event => {
-		if (event.keyCode) == 13 && userInput != "") {
-			getList(theList.concat(userInput));
+		if (event.keyCode == 13 && userInput != "") {
+			setList(theList.concat(userInput));
 			setUserInput("");
 		}
 	};
@@ -22,7 +22,7 @@ export const Home = () => {
 		var updatedList = theList.filter(
 			(task, taskIndex) => index != taskIndex
 		);
-		getList(updatedList);
+		setList(updatedList);
 	};
 
 	return (
